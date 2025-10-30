@@ -1,4 +1,4 @@
-export default class OdooRPC {
+class OdooRPC {
   constructor(url, db, context) {
     this.url = url;
     this.db = db;
