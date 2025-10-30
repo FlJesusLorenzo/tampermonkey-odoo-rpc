@@ -1,0 +1,29 @@
+// ==UserScript==
+// @name         Prueba OdooRCP para TamperMonkey
+// @namespace    http://tampermonkey.net/
+// @version      0.0.1
+// @author       Jesús Lorenzo
+// @grant        GM_xmlhttpRequest
+// @connect      *
+// @require      https://github.com/FlJesusLorenzo/tampermonkey-odoo-rpc/raw/refs/heads/main/OdooRPC.js
+// ==/UserScript==
+
+(function () {
+  "use strict";
+
+  const odooRPC = new OdooRPC(
+    "https://odoo.factorlibre.com",
+    "factorlibre_db",
+    {
+      lang: CONFIG.LANG,
+      tz: CONFIG.TIMEZONE,
+    }
+  );
+    try {
+        await odooRPC.authenticate();
+        console.log("Correcto")
+    } catch (e){
+        console.error("Error: "+ e)
+    }
+    
+});
