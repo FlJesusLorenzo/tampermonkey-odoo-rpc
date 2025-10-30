@@ -10,7 +10,7 @@
 
 (function () {
   "use strict";
-
+  let odooRPC = null
   const odooRPC = new OdooRPC(
     "https://odoo.factorlibre.com",
     "factorlibre_db",
@@ -19,11 +19,6 @@
       tz: CONFIG.TIMEZONE,
     }
   );
-    try {
-        await odooRPC.authenticate();
-        console.log("Correcto")
-    } catch (e){
-        console.error("Error: "+ e)
-    }
-    
-});
+  odooRPC.authenticate();
+  console.log("Correcto")
+})();
