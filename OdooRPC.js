@@ -132,7 +132,7 @@ class OdooRPC {
     });
   }
 
-  function formatDate(date) {
+  formatDate(date) {
     let datetime = new Date(date).toISOString();
     datetime = datetime.split("T");
     return `${datetime[0]} ${datetime[1].split(".")[0]}`;
