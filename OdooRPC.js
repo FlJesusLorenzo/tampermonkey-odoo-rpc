@@ -147,7 +147,7 @@ class OdooRPC {
     datetime = null
   ) {
     const today = date || new Date().toISOString().split("T")[0];
-    datetime = datetime || formatDate(today);
+    datetime = datetime || this.formatDate(today);
 
     const timesheetData = {
       project_id: projectId,
