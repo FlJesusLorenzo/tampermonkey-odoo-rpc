@@ -10,7 +10,7 @@ class OdooRPC {
   async authenticate() {
     try {
       const sessionInfo = await this.getSessionInfo();
-      if (sessionInfo?.ud) {
+      if (sessionInfo?.uid) {
         this.uid = sessionInfo.uid;
         this.sessionId = sessionInfo.session_id;
         this.context = { ...this.context, uid: this.uid };
